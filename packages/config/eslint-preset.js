@@ -1,12 +1,31 @@
 module.exports = {
-  extends: ["next", "prettier"],
+  extends: ["next/core-web-vitals", "prettier", "eslint:recommended"],
   settings: {
     next: {
       rootDir: ["apps/*/", "packages/*/"],
     },
   },
-  rules: {
-    "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
+  env: {
+    browser: true,
+    node: true,
+    es2021: true,
   },
-};
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    }
+  },
+  rules: {
+    "no-unused-vars": "off",
+    "no-console": "warn",
+    "react/prop-types": 0,
+    "no-case-declarations": 0,
+    "import/no-anonymous-default-export": [
+      "error",
+      { "allowArrowFunction": true }
+    ],
+    "@next/next/no-img-element": 0
+  }
+}

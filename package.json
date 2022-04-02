@@ -1,6 +1,15 @@
 {
-  "name": "turborepo-basic-shared",
-  "version": "0.0.0",
+  "name": "source-code",
+  "author": "Bachitter Chahal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bachitterch/source-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bachitterch/source-code/issues"
+  },
+  "homepage": "https://github.com/bachitterch/source-code#readme",
   "private": true,
   "workspaces": [
     "apps/*",
