@@ -1,6 +1,17 @@
 {
   "name": "portfolio-v3",
   "version": "3.0.0",
+  "description": "Personal Website built using Next.js and Notion",
+  "author": "Bachitter Chahal <bachittersc@gmail.com>",
+  "homepage": "https://bachitter.dev",
+  "keywords": [
+    "next.js",
+    "notion",
+    "portfolio",
+    "personal",
+    "website"
+  ],
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,16 +20,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "12.1.4",
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.12",
-    "@types/react": "17.0.37",
+    "@types/node": "^17.0.23",
+    "@types/react": "17.0.43",
     "config": "workspace:*",
-    "eslint": "7.32.0",
+    "eslint": "8.12.0",
     "tsconfig": "workspace:*",
-    "typescript": "^4.5.3"
+    "typescript": "^4.6.3"
   }
 }
