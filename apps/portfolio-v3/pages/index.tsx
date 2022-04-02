@@ -1,9 +1,9 @@
-
-export default function Web() {
+const Home = () => {
   return (
-    <div>
-      <h1>Web</h1>
-      
-    </div>
+    <>
+      <h1>Home</h1>
+    </>
   )
 }
+
+export default Home
