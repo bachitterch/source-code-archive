@@ -1,7 +1,9 @@
+import Layout from "@layouts/__layout"
+
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Layout></Layout>
     </>
   )
 }
