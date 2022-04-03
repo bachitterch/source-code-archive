@@ -94,6 +94,7 @@ const Post = ({ content, frontMatter }) => {
             height={684}
             placeholder='blur'
             blurDataURL={frontMatter.Thumbnail}
+            className='postImage rounded-md md:rounded-xl'
             alt={'article cover'}
           ></Image>
           <h1 className='mb-2'>{frontMatter.Title}</h1>

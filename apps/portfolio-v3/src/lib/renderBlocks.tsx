@@ -108,7 +108,12 @@ export const renderBlocks = block => {
       const caption = value.caption ? value.caption[0]?.plain_text : ''
       return (
         <div className='imageContainer'>
-          <img src={src} alt={caption} loading='lazy' />
+          <img
+            src={src}
+            alt={caption}
+            loading='lazy'
+            className='postImage rounded-md md:rounded-xl'
+          />
           {caption && (
             <figcaption className='text-tiny italic ml-px opacity-60'>
               {caption}
@@ -147,7 +152,7 @@ export const renderBlocks = block => {
       return (
         <div className='relative mx-auto h-full w-full overflow-hidden pb-[56.25%]'>
           <iframe
-            className='absolute top-0 left-0 mx-auto h-full w-full'
+            className='absolute top-0 left-0 mx-auto h-full w-full rounded-md md:rounded-xl'
             src={value.external.url}
             frameBorder='0'
             allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
