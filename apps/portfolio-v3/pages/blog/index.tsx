@@ -1,5 +1,6 @@
-import { getItemList } from '@lib/notion'
+import { getItemList, convertItemsToList } from '@lib/notion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import Container from '@layouts/__layout'
 import { generateRSS } from 'scripts/generate-rss'
@@ -8,20 +9,19 @@ export const databaseId = process.env.BLOG_DATABASE_ID
 
 export const getStaticProps = async () => {
   const response = await getItemList(databaseId)
+  const { items } = convertItemsToList(response)
+
   await generateRSS()
 
   return {
     props: {
-      posts: response
+      posts: items
     },
     revalidate: 1
   }
 }
 
 const Blog = ({ posts }) => {
-  const filteredPosts = posts.filter(post => {
-    return post.properties.status.select.name === 'published'
-  })
   return (
     <>
       <NextSeo
@@ -35,26 +35,25 @@ const Blog = ({ posts }) => {
           experience in my life.
         </p>
         <div className='post_list space-y-5'>
-          {filteredPosts.map(post => {
-            const postTitle = post.properties.name.title[0].plain_text
-            const postSummary = post.properties.summary.rich_text[0].plain_text
-            const postDate = new Date(
-              post.properties.published.date.start
-            ).toLocaleString('en-US', {
-              month: 'short',
-              day: '2-digit',
-              year: 'numeric'
-            })
-            const postSlug = post.properties.slug.rich_text[0].plain_text
+          {posts.map(post => {
             return (
               <div key={post.id}>
-                <Link href={`/blog/${postSlug}`}>
+                <Link href={`/blog/${post.slug}`}>
                   <a className='post block rounded-2xl bg-white/5 p-6 no-underline hover:bg-white/[0.08]'>
-                    <h2>{postTitle}</h2>
+                    <Image
+                      src={post.thumbnail}
+                      alt={post.title}
+                      objectFit='cover'
+                      width={1200}
+                      height={684}
+                      placeholder='blur'
+                      blurDataURL={post.thumbnail}
+                    ></Image>
+                    <h2>{post.title}</h2>
                     <p className='mb-3 -mt-2 text-tiny italic opacity-60'>
-                      {postDate}
+                      {post.date}
                     </p>
-                    <p className='text-lg'>{postSummary}</p>
+                    <p className='text-lg'>{post.summary}</p>
                   </a>
                 </Link>
               </div>

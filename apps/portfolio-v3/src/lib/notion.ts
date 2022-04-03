@@ -42,10 +42,18 @@ export const convertItemsToList = (tableData: any) => {
         item.properties.status.select.name === 'published'
       ) {
         return {
+          id: item.id,
           title: item.properties.name.title[0].plain_text,
           published: item.properties.status.select.name === 'published',
           summary: item.properties?.summary?.rich_text[0]?.plain_text,
-          date: item.properties.published?.date?.start,
+          date: new Date(item.properties.published.date.start).toLocaleString(
+            'en-US',
+            {
+              month: 'short',
+              day: '2-digit',
+              year: 'numeric'
+            }
+          ),
           thumbnail:
             item.properties?.thumbnail?.files[0]?.file?.url ||
             item.properties.thumbnail?.files[0]?.external?.url,
