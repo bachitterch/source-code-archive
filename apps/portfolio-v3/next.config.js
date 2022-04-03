@@ -5,6 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: [
       'i.scdn.co',
       'images.unsplash.com',
