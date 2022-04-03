@@ -12,7 +12,8 @@ const nextConfig = {
       'unsplash.com',
       's3.us-west-2.amazonaws.com',
       's3-us-west-2.amazonaws.com',
-      'res.cloudinary.com'
+      'res.cloudinary.com',
+      'github.com',
     ]
   },
   async rewrites() {

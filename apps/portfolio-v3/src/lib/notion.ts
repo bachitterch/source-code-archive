@@ -57,7 +57,33 @@ export const convertItemsToList = (tableData: any) => {
           thumbnail:
             item.properties?.thumbnail?.files[0]?.file?.url ||
             item.properties.thumbnail?.files[0]?.external?.url,
-          slug: item.properties?.slug?.rich_text[0]?.plain_text
+          slug: item.properties?.slug?.rich_text[0]?.plain_text,
+          featured: item.properties?.featured?.checkbox
+        }
+      }
+    })
+    .filter(post => {
+      return post !== undefined
+    })
+  return { items }
+}
+
+export const convertProjectsToList = (tableData: any) => {
+  const items = tableData
+    .map((item: any) => {
+      if (
+        item.object != 'undefined' &&
+        item.properties.status.select.name === 'published'
+      ) {
+        return {
+          id: item.id,
+          title: item.properties.name.title[0].plain_text,
+          summary: item.properties?.description?.rich_text[0]?.plain_text,
+          thumbnail:
+            item.properties?.thumbnail?.files[0]?.file?.url ||
+            item.properties.thumbnail?.files[0]?.external?.url,
+          link: item.properties?.link?.url,
+          github: item.properties?.github?.url
         }
       }
     })

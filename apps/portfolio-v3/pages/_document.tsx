@@ -16,7 +16,7 @@ const Document = () => {
           href='https://use.typekit.net/ohm3ssj.css'
         ></link>
       </Head>
-      <body>
+      <body className='text-white-800 bg-white-50'>
         <Main />
         <NextScript />
       </body>

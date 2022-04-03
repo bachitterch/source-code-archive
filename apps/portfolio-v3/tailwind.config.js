@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     fontSize: {
+      'xs': '.75rem',
       'sm': '.875rem',
       'tiny': '.984rem',
       'base': '1rem',
@@ -17,11 +18,22 @@ module.exports = {
       '4xl': '2.25rem '
     },
     colors: {
-      primary: '#003049',
-      secondary: '#B1EFE3',
-      tertiary: '#F9F3E3',
-      accent: '#FFAB91',
-      white: '#FFFFFF'
+      transparent: 'transparent',
+      white: {
+        '1000': '#ffffff',
+        '900': '#f3f3f5',
+        '800': '#ececec',
+        '700': '#e5e5e5',
+        '600': '#c0c0c0',
+        '500': '#a5a5a5',
+        '400': '#858585',
+        '400': '#6f6f6f',
+        '200': '#4a4a4a',
+        '100': '#333333',
+        '50': '#252525',
+        '10': '#1A1919',
+        '0': '#000000'
+      }
     },
     fontFamily: {
       sans: ['Inter', ...fontFamily.sans],
