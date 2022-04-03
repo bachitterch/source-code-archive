@@ -1,8 +1,8 @@
 import RSS from 'rss'
 import { mkdirSync, writeFileSync } from 'fs'
-import { convertItemsToList, getItemList } from '@lib/notion'
+import { convertItemsToList, getItemList } from '../src/lib/notion'
 
-const generateRSS = async () => {
+export const generateRSS = async () => {
   const resp = await getItemList(process.env.BLOG_DATABASE_ID)
   const posts = await convertItemsToList(resp)
 
@@ -23,5 +23,3 @@ const generateRSS = async () => {
   mkdirSync('./public/rss', { recursive: true })
   writeFileSync('./public/rss/feed.xml', feed.xml({ indent: true }))
 }
-
-export default generateRSS

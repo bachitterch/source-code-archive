@@ -2,11 +2,13 @@ import { getItemList } from '@lib/notion'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import Container from '@layouts/__layout'
+import { generateRSS } from 'scripts/generate-rss'
 
 export const databaseId = process.env.BLOG_DATABASE_ID
 
 export const getStaticProps = async () => {
   const response = await getItemList(databaseId)
+  await generateRSS()
 
   return {
     props: {

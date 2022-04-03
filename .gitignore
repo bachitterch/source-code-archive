@@ -32,5 +32,4 @@ yarn-error.log*
 # turbo
 .turbo
 
-public/sitemap.xml
-public/feed.xml
+rss
