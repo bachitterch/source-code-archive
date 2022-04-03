@@ -1,5 +1,5 @@
 import RSS from 'rss'
-import { writeFileSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import { convertItemsToList, getItemList } from '@lib/notion'
 
 const generateRSS = async () => {
@@ -20,7 +20,8 @@ const generateRSS = async () => {
       description: post.summary
     })
   })
-  writeFileSync('./public/feed.xml', feed.xml({ indent: true }))
+  mkdirSync('./public/rss', { recursive: true })
+  writeFileSync('./public/rss/feed.xml', feed.xml({ indent: true }))
 }
 
 export default generateRSS
