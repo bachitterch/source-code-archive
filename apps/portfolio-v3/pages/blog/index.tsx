@@ -8,7 +8,6 @@ export const databaseId = process.env.BLOG_DATABASE_ID
 export const getStaticProps = async () => {
   const response = await getItemList(databaseId)
 
-
   return {
     props: {
       posts: response
@@ -17,17 +16,16 @@ export const getStaticProps = async () => {
   }
 }
 
-const title = 'Blog - Bachitter Chahal'
-const url = 'https://bachitter.dev/blog'
-
 const Blog = ({ posts }) => {
-
   const filteredPosts = posts.filter(post => {
     return post.properties.status.select.name === 'published'
   })
   return (
     <>
-      <NextSeo title={title} canonical={url} />
+      <NextSeo
+        title={`Blog - Bachitter Chahal`}
+        canonical={`https://bachitter.dev/blog`}
+      />
       <Container>
         <h1>Blog</h1>
         <p className='mb-10 text-tiny opacity-60 md:text-base'>

@@ -18,7 +18,8 @@ module.exports = {
     }
   },
   rules: {
-    "no-unused-vars": "off",
+    "no-unused-vars": 0,
+    "no-undef": 0,
     "no-console": "warn",
     "react/prop-types": 0,
     "no-case-declarations": 0,

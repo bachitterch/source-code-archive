@@ -34,11 +34,27 @@ export const getPageData = async pageId => {
   return response.results
 }
 
-export const convertItemsToList = tableData => {
-  const items = tableData.map(item => {
-    return {
-      slug: item.properties.slug.rich_text[0].plain_text
-    }
-  })
+export const convertItemsToList = (tableData: any) => {
+  const items = tableData
+    .map((item: any) => {
+      if (
+        item.object != 'undefined' &&
+        item.properties.status.select.name === 'published'
+      ) {
+        return {
+          title: item.properties.name.title[0].plain_text,
+          published: item.properties.status.select.name === 'published',
+          summary: item.properties?.summary?.rich_text[0]?.plain_text,
+          date: item.properties.published?.date?.start,
+          thumbnail:
+            item.properties?.thumbnail?.files[0]?.file?.url ||
+            item.properties.thumbnail?.files[0]?.external?.url,
+          slug: item.properties?.slug?.rich_text[0]?.plain_text
+        }
+      }
+    })
+    .filter(post => {
+      return post !== undefined
+    })
   return { items }
 }

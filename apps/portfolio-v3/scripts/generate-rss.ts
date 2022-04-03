@@ -1,0 +1,26 @@
+import RSS from 'rss'
+import { writeFileSync } from 'fs'
+import { convertItemsToList, getItemList } from '@lib/notion'
+
+const generateRSS = async () => {
+  const resp = await getItemList(process.env.BLOG_DATABASE_ID)
+  const posts = await convertItemsToList(resp)
+
+  const feed = new RSS({
+    title: 'Bachitter Chahal',
+    site_url: 'https://bachitter.dev',
+    feed_url: 'https://bachitter.dev/feed.xml'
+  })
+
+  posts.items.map(post => {
+    feed.item({
+      title: post.title,
+      url: `https://bachitter.dev/blog/${post.slug}`,
+      date: post.date,
+      description: post.summary
+    })
+  })
+  writeFileSync('./public/feed.xml', feed.xml({ indent: true }))
+}
+
+export default generateRSS

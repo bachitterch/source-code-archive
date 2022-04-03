@@ -1,10 +1,9 @@
 import { getItemList, getItem, getBlocks } from '@lib/notion'
-import Image from 'next/image'
 import { renderBlocks } from '@lib/renderBlocks'
 import { Fragment } from 'react'
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 import Container from '@layouts/__layout'
-import { Client } from '@notionhq/client'
 
 export const databaseId = process.env.BLOG_DATABASE_ID
 

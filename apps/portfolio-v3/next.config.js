@@ -14,6 +14,14 @@ const nextConfig = {
       's3-us-west-2.amazonaws.com',
       'res.cloudinary.com'
     ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap'
+      }
+    ];
   }
 }
 
