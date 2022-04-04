@@ -5,6 +5,7 @@ import { Fragment } from 'react'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Container from '@layouts/__layout'
+import Subscribe from '@components/Subscribe'
 
 export const databaseId = process.env.BLOG_DATABASE_ID
 
@@ -110,11 +111,12 @@ const Post = ({ content, frontMatter }) => {
             <span>{frontMatter.Date}</span>
           </div>
 
-          <div className=' space-y-5'>
+          <div className='grid space-y-6 mb-6'>
             {content.map(block => (
               <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
             ))}
           </div>
+          <Subscribe />
         </div>
       </Container>
     </>

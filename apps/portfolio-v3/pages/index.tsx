@@ -10,6 +10,7 @@ import {
   convertProjectsToList
 } from '@lib/notion'
 import WeatherWidget from '@components/WeatherWidget'
+import Subscribe from '@components/Subscribe'
 
 const projectsDbId = process.env.PROJECTS_DATABASE_ID
 const databaseId = process.env.BLOG_DATABASE_ID
@@ -162,11 +163,12 @@ const Home = ({ projects, posts }) => {
                 })}
             </div>
           </div>
-          <div className='widgets'>
+          <div className='widgets space-y-6'>
             <div className='grid grid-flow-row sm:grid-cols-2  mt-2 gap-6'>
               <NowPlaying />
               <WeatherWidget />
             </div>
+            <Subscribe />
           </div>
         </div>
       </Layout>

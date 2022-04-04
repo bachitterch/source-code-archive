@@ -29,7 +29,7 @@ const NowPlaying = () => {
         <div>
           {data?.songUrl ? (
             <a
-              className='text-xl font-bold text-white-800'
+              className='text-xl font-bold text-white-900'
               href={data.songUrl}
               target='_blank'
               rel='noopener noreferrer'
@@ -39,7 +39,7 @@ const NowPlaying = () => {
           ) : (
             <p className='font-medium'>Not Playing</p>
           )}
-          <p className='-mt-2 w-[22ch] overflow-hidden'>
+          <p className='-mt-2 w-[22ch] overflow-hidden text-white-900'>
             {data?.artist ?? 'Spotify'}
           </p>
         </div>
