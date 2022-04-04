@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { getItemList, getItem, getBlocks } from '@lib/notion'
 import { renderBlocks } from '@lib/renderBlocks'
 import { Fragment } from 'react'
@@ -7,7 +8,7 @@ import Container from '@layouts/__layout'
 
 export const databaseId = process.env.BLOG_DATABASE_ID
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   let paths = []
   const posts: any = await getItemList(databaseId)
 
@@ -30,7 +31,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const data: any = await getItemList(databaseId)
 
   const post: any = await getItem(data, slug)

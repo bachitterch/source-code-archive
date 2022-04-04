@@ -1,13 +1,14 @@
 import { getItemList, convertItemsToList } from '@lib/notion'
-import Link from 'next/link'
-import Image from 'next/image'
-import { NextSeo } from 'next-seo'
-import Container from '@layouts/__layout'
 import { generateRSS } from 'scripts/generate-rss'
+import Container from '@layouts/__layout'
+import { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const databaseId = process.env.BLOG_DATABASE_ID
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await getItemList(databaseId)
   const { items } = convertItemsToList(response)
 
@@ -35,31 +36,36 @@ const Blog = ({ posts }) => {
           experience in my life.
         </p>
         <div className='post_list space-y-5'>
-          {posts.map(post => {
-            return (
-              <div key={post.id}>
-                <Link href={`/blog/${post.slug}`}>
-                  <a className='post block rounded-2xl bg-white/5 p-6 no-underline hover:bg-white/[0.08]'>
-                    <Image
-                      src={post.thumbnail}
-                      alt={post.title}
-                      objectFit='cover'
-                      width={1200}
-                      height={684}
-                      placeholder='blur'
-                      blurDataURL={post.thumbnail}
-                      className='postImage rounded-md md:rounded-xl'
-                    ></Image>
-                    <h2>{post.title}</h2>
-                    <p className='mb-3 -mt-2 text-tiny italic opacity-60'>
-                      {post.date}
-                    </p>
-                    <p className='text-lg'>{post.summary}</p>
-                  </a>
-                </Link>
-              </div>
-            )
-          })}
+          {(!posts.length && (
+            <p className='text-center text-white-600 text-base'>
+              No Article Found!
+            </p>
+          )) ||
+            posts.map(post => {
+              return (
+                <div key={post.id}>
+                  <Link href={`/blog/${post.slug}`}>
+                    <a className='post block rounded-2xl bg-white/5 p-6 no-underline hover:bg-white/[0.08]'>
+                      <Image
+                        src={post.thumbnail}
+                        alt={post.title}
+                        objectFit='cover'
+                        width={1200}
+                        height={684}
+                        placeholder='blur'
+                        blurDataURL={post.thumbnail}
+                        className='postImage rounded-md md:rounded-xl'
+                      ></Image>
+                      <h2>{post.title}</h2>
+                      <p className='mb-3 -mt-2 text-tiny italic opacity-60'>
+                        {post.date}
+                      </p>
+                      <p className='text-lg'>{post.summary}</p>
+                    </a>
+                  </Link>
+                </div>
+              )
+            })}
         </div>
       </Container>
     </>

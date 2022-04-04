@@ -1,17 +1,20 @@
+import authorimage from 'public/images/author.png'
+import NowPlaying from '@components/NowPlaying'
+import Layout from '@layouts/__layout'
+import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Layout from '@layouts/__layout'
-import authorimage from 'public/images/author.png'
 import {
   getItemList,
   convertItemsToList,
   convertProjectsToList
 } from '@lib/notion'
+import WeatherWidget from '@components/WeatherWidget'
 
 const projectsDbId = process.env.PROJECTS_DATABASE_ID
 const databaseId = process.env.BLOG_DATABASE_ID
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = async () => {
     const response = await getItemList(projectsDbId)
     const { items } = convertProjectsToList(response)
@@ -41,7 +44,7 @@ const Home = ({ projects, posts }) => {
   return (
     <>
       <Layout>
-        <div className='container grid space-y-6'>
+        <div className='grid space-y-6'>
           <div className='authorData'>
             <Image
               src={authorimage}
@@ -56,7 +59,7 @@ const Home = ({ projects, posts }) => {
               </h1>
               <p className='mb-6'>
                 I&#39;m a self-taught developer specializing in front-end
-                development, originally from Punjab, Currently living in
+                development, originally from Punjab, currently living in
                 Vancouver, BC. I spend my spare time watching NetFlix or Twitch
                 streams. You can check the{' '}
                 <Link href='/now'>
@@ -83,34 +86,38 @@ const Home = ({ projects, posts }) => {
           <div className='projects'>
             <h2 className='mb-6 mt-2'>Projects</h2>
             <div className='space-y-6'>
-              {projects.map(project => {
-                return (
-                  <div key={project.id} className='project '>
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.title}
-                      objectPosition='top'
-                      objectFit='cover'
-                      width={1200}
-                      height={684}
-                      placeholder='blur'
-                      blurDataURL={project.thumbnail}
-                      className='projectImage rounded-md md:rounded-xl'
-                    ></Image>
-                    <h3 className='mb-2 mt-4'>{project.title}</h3>
-                    <p className='mb-4 text-base'>{project.summary}</p>
+              {(!projects.length && (
+                <p className='text-center text-white-600 text-base'>
+                  No Projects Found!
+                </p>
+              )) ||
+                projects.map(project => {
+                  return (
+                    <div key={project.id} className='project'>
+                      <Image
+                        src={project.thumbnail}
+                        alt={project.title}
+                        layout='raw'
+                        width={1200}
+                        height={684}
+                        placeholder='blur'
+                        blurDataURL={project.thumbnail}
+                        className='projectImage rounded-md md:rounded-xl object-cover object-top'
+                      ></Image>
+                      <h3 className='mb-2 mt-4'>{project.title}</h3>
+                      <p className='mb-4 text-base'>{project.summary}</p>
 
-                    <div className='project-links flex gap-4'>
-                      <a target='blank' href={project.link}>
-                        Visit Website
-                      </a>
-                      <a target='blank' href={project.github}>
-                        View Code
-                      </a>
+                      <div className='project-links flex gap-4'>
+                        <a target='blank' href={project.link}>
+                          Visit Website
+                        </a>
+                        <a target='blank' href={project.github}>
+                          View Code
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
             </div>
           </div>
           <div className='articles'>
@@ -125,17 +132,16 @@ const Home = ({ projects, posts }) => {
                   return (
                     <div key={post.id}>
                       <Link href={`/blog/${post.slug}`}>
-                        <a>
+                        <a className='block'>
                           <Image
                             src={post.thumbnail}
                             alt={post.title}
-                            objectPosition='top'
-                            objectFit='cover'
+                            layout='raw'
                             width={1200}
                             height={684}
                             placeholder='blur'
                             blurDataURL={post.thumbnail}
-                            className='postImage rounded-md md:rounded-xl'
+                            className='projectImage rounded-md md:rounded-xl object-cover object-top'
                           ></Image>
                           <h3 className='mb-2 mt-4 text-white-800'>
                             {post.title}
@@ -146,6 +152,12 @@ const Home = ({ projects, posts }) => {
                     </div>
                   )
                 })}
+            </div>
+          </div>
+          <div className='widgets'>
+            <div className='grid grid-flow-row sm:grid-cols-2  mt-2 gap-6'>
+              <NowPlaying />
+              <WeatherWidget />
             </div>
           </div>
         </div>

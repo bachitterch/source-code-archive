@@ -33,13 +33,18 @@ module.exports = {
         '50': '#252525',
         '10': '#1A1919',
         '0': '#000000'
-      }
+      },
+      spotify_green: '#1ED760',
     },
     fontFamily: {
       sans: ['Inter', ...fontFamily.sans],
       mono: ['source-code-pro', ...fontFamily.mono]
     },
-    extend: {}
+    extend: {
+      screens: {
+        'xs': '410px',
+      }
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),

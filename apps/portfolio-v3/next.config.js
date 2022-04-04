@@ -24,6 +24,11 @@ const nextConfig = {
         destination: '/api/sitemap'
       }
     ];
+  },
+  experimental: {
+    images: {
+      layoutRaw: true,
+    }
   }
 }
 
