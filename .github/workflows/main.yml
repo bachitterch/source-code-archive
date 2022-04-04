@@ -5,6 +5,22 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    
+env:
+  NOTION_ACCESS_TOKEN: ${{ env.NOTION_ACCESS_TOKEN }}
+  ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
+  BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
+  COLOPHON_PAGE_ID: ${{ secrets.COLOPHON_PAGE_ID }}
+  MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+  MAILCHIMP_API_SERVER: ${{ secrets.MAILCHIMP_API_SERVER }}
+  MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
+  NOW_PAGE_ID: ${{ secrets.NOW_PAGE_ID }}
+  OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+  PROJECTS_DATABASE_ID: ${{ secrets.PROJECTS_DATABASE_ID }}
+  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+  SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+  UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
 
 jobs:
   build:
@@ -15,21 +31,6 @@ jobs:
         node-version: [16.x]
     steps:
       - uses: actions/checkout@v2
-        env:
-          NOTION_ACCESS_TOKEN: ${{ secrets.NOTION_ACCESS_TOKEN }}
-          ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
-          BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
-          COLOPHON_PAGE_ID: ${{ secrets.COLOPHON_PAGE_ID }}
-          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
-          MAILCHIMP_API_SERVER: ${{ secrets.MAILCHIMP_API_SERVER }}
-          MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
-          NOW_PAGE_ID: ${{ secrets.NOW_PAGE_ID }}
-          OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
-          PROJECTS_DATABASE_ID: ${{ secrets.PROJECTS_DATABASE_ID }}
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.32.4
@@ -40,4 +41,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - run: pnpm build
+      - run: |
+            NOTION_ACCESS_TOKEN: ${{ env.NOTION_ACCESS_TOKEN }}
+            ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
+            BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
+            COLOPHON_PAGE_ID: ${{ secrets.COLOPHON_PAGE_ID }}
+            MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+            MAILCHIMP_API_SERVER: ${{ secrets.MAILCHIMP_API_SERVER }}
+            MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
+            NOW_PAGE_ID: ${{ secrets.NOW_PAGE_ID }}
+            OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+            PROJECTS_DATABASE_ID: ${{ secrets.PROJECTS_DATABASE_ID }}
+            SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+            SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+            SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+            UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
       - run: pnpm lint
