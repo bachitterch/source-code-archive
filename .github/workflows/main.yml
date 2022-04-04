@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - run: pnpm build
-      - run: |
+      - env: |
             NOTION_ACCESS_TOKEN: ${{ env.NOTION_ACCESS_TOKEN }}
             ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
             BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
