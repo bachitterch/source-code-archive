@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 const Layout = (props, init) => {
   const { children } = props
   return (

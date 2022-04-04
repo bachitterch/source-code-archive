@@ -1,10 +1,8 @@
-
 const title = `Bachitter Chahal`
 const description = `Front-end developer, and Blogger based in Vancouver,CA.`
 const domain = `bachitter.dev`
 const twitter = `@bachitterch`
 const image = 'banner.jpg'
-
 
 export const seo = {
   title,
@@ -21,12 +19,12 @@ export const seo = {
         url: `https://${domain}/${image}`,
         width: 1600,
         height: 836,
-        alt: title,
-      },
-    ],
+        alt: title
+      }
+    ]
   },
   twitter: {
     handle: twitter,
-    cardType: "summary_large_image",
+    cardType: 'summary_large_image'
   }
 }
