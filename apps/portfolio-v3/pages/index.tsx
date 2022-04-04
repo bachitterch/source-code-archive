@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
       projects: await projects(),
       posts: await posts()
     },
-    revalidate: 3600
+    revalidate: 600
   }
 }
 
