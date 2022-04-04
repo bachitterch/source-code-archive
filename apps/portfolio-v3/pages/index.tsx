@@ -108,10 +108,18 @@ const Home = ({ projects, posts }) => {
                       <p className='mb-4 text-base'>{project.summary}</p>
 
                       <div className='project-links flex gap-4'>
-                        <a target='blank' href={project.link}>
+                        <a
+                          target='blank'
+                          rel='noopener noreferrer'
+                          href={project.link}
+                        >
                           Visit Website
                         </a>
-                        <a target='blank' href={project.github}>
+                        <a
+                          target='blank'
+                          rel='noopener noreferrer'
+                          href={project.github}
+                        >
                           View Code
                         </a>
                       </div>
