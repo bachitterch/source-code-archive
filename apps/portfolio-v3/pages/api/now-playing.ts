@@ -3,18 +3,15 @@ import { getNowPlaying } from '@lib/spotify'
 
 const nowPlaying = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await getNowPlaying()
+
   if (response.status === 204 || response.status > 400) {
-    res.status(200).json({
-      isPlaying: false
-    })
+    return res.status(200).json({ isPlaying: false })
   }
 
   const song = await response.json()
 
   if (song.item === null) {
-    res.status(200).json({
-      isPlaying: false
-    })
+    return res.status(200).json({ isPlaying: false })
   }
 
   const isPlaying = song.is_playing

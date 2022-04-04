@@ -6,9 +6,9 @@ import useSWR from 'swr'
 const NowPlaying = () => {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
   return (
-    <div className='flex bg-spotify_green p-6 rounded-xl flex-col xs:flex-row w-full h-56'>
+    <div className='flex bg-spotify_green p-6 rounded-xl flex-col w-full h-56 justify-end'>
       <div className='flex gap-2 flex-col justify-end'>
-        <div className=''>
+        <div>
           {data?.songUrl ? (
             <Image
               src={data?.albumArt}
