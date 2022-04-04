@@ -100,18 +100,19 @@ const Post = ({ content, frontMatter }) => {
             alt={'article cover'}
           ></Image>
           <h1 className='mb-2'>{frontMatter.Title}</h1>
-          <div className='mb-10 flex space-x-2'>
+          <div className='mb-10 flex space-x-2 items-center italic text-white-600'>
+            --&nbsp;
             <a
               href='https://twitter.com/bachitterch'
               className='flex items-center space-x-2'
             >
-              <p>{frontMatter.Author}</p>
+              <p> {frontMatter.Author}</p>
             </a>{' '}
-            <span>|</span>
+            <span>/</span>
             <span>{frontMatter.Date}</span>
           </div>
 
-          <div className='grid space-y-6 mb-6'>
+          <div className='space-y-6 mb-6'>
             {content.map(block => (
               <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
             ))}

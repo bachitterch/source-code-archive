@@ -45,7 +45,7 @@ const Blog = ({ posts }) => {
               return (
                 <div key={post.id}>
                   <Link href={`/blog/${post.slug}`}>
-                    <a className='post block rounded-2xl bg-white/5 p-6 no-underline hover:bg-white/[0.08]'>
+                    <a className='block hover:no-underline'>
                       <Image
                         src={post.thumbnail}
                         alt={post.title}
@@ -56,11 +56,8 @@ const Blog = ({ posts }) => {
                         blurDataURL={post.thumbnail}
                         className='postImage rounded-md md:rounded-xl'
                       ></Image>
-                      <h2>{post.title}</h2>
-                      <p className='mb-3 -mt-2 text-tiny italic opacity-60'>
-                        {post.date}
-                      </p>
-                      <p className='text-lg'>{post.summary}</p>
+                      <h2 className='mb-2 mt-4 text-white-800'>{post.title}</h2>
+                      <p className='text-base'>{post.summary}</p>
                     </a>
                   </Link>
                 </div>

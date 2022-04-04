@@ -155,7 +155,7 @@ const Home = ({ projects, posts }) => {
                           <h3 className='mb-2 mt-4 text-white-800'>
                             {post.title}
                           </h3>
-                          <p className=' text-base'>{post.summary}</p>
+                          <p className='text-base'>{post.summary}</p>
                         </a>
                       </Link>
                     </div>

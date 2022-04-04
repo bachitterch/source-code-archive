@@ -15,7 +15,9 @@ export const Text = ({ text }) => {
         className={[
           bold ? 'font-bold' : null,
           italic ? 'italic' : null,
-          code ? 'tracking-tight' : null,
+          code
+            ? 'font-mono tracking-wider bg-white-10 py-1 px-2 rounded-md text-sm'
+            : null,
           strikethrough ? 'line-through' : null,
           underline ? 'underline' : null
         ].join(' ')}
@@ -78,9 +80,10 @@ export const renderBlocks = block => {
     case 'to_do':
       return (
         <div>
-          <label className='to-do' htmlFor={id}>
+          <label className='to-do flex items-center gap-2' htmlFor={id}>
             <input
               type='checkbox'
+              className='rounded-md  hover:ring focus:ring-0  active:ring-0 hover:ring-white-600 checked:ring-white-300 focus:outline-0 text-white-300'
               id={id}
               aria-describedby={value.rich_text}
               defaultChecked={value.checked}
@@ -124,10 +127,14 @@ export const renderBlocks = block => {
     case 'divider':
       return <hr key={id} />
     case 'quote':
-      return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>
+      return (
+        <blockquote className='border-l-4 px-4 py-2 bg-white-10' key={id}>
+          {value.rich_text[0].plain_text}
+        </blockquote>
+      )
     case 'callout':
       return (
-        <div className='callout'>
+        <div className='callout flex items-center gap-3 bg-white-10 rounded-md px-4 py-4'>
           {value.icon && <span>{value.icon.emoji}</span>}
           <div>
             <Text text={value.rich_text} />
@@ -136,8 +143,8 @@ export const renderBlocks = block => {
       )
     case 'code':
       return (
-        <div className='relative text-primary  rounded-2xl bg-white/5'>
-          <p className='px-4 py-2 border-b border-b-white text-tiny opacity-60 capitalize'>
+        <div className='relative text-primary  rounded-2xl bg-white-10'>
+          <p className='px-6 py-3 border-b border-b-white text-tiny opacity-60 capitalize'>
             {value.language}
           </p>
 

@@ -18,6 +18,19 @@
   src: url(/fonts/Inter-italic.var.woff2) format('woff2');
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-lg bg-white-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-white-800;
+}
+
 html {
   min-width: 375px;
   scroll-behavior: smooth;
