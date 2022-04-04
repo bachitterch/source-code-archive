@@ -19,7 +19,7 @@ const renderImage = (weather: string) => {
     case 'Mist':
       return 'https://images.unsplash.com/photo-1517144986814-c3179e77141e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&q=75&w=400'
     default:
-      return 'https://images.unsplash.com/photo-1560813962-ff3d8fcf59ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&q=75&w=400'
+      return 'https://images.unsplash.com/photo-1610356194230-b46385bcfd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&q=75&w=400'
   }
 }
 
@@ -47,12 +47,6 @@ const ImageLink = (weather: string) => {
 const WeatherWidget = () => {
   const { data } = useSWR<OpenWeatherData>('/api/open-weather', fetcher)
   const weather = data?.weather
-  const currentTemperature = Math.round(data?.temp)
-  const minTemperature = Math.round(data?.min)
-  const maxTemperature = Math.round(data?.max)
-  const weatherDescription =
-    data?.description.charAt(0).toUpperCase() + data?.description.slice(1)
-  const City = data?.city
 
   return (
     <div
@@ -76,13 +70,18 @@ const WeatherWidget = () => {
         View Image
       </a>
       <div className='space-y-4'>
-        <p className='text-[3rem] font-bold'>{currentTemperature}°</p>
-        <p className='text-sm leading-none'>{weatherDescription}</p>
+        <p className='text-[3rem] font-bold'>{Math.round(data?.temp)}°</p>
+        <p className='text-sm leading-none'>
+          {data?.description.charAt(0).toUpperCase() +
+            data?.description.slice(1)}
+        </p>
         <div>
-          <p className='text-sm font-semibold leading-none mb-0.5'>{City}</p>
+          <p className='text-sm font-semibold leading-none mb-0.5'>
+            {data?.city}
+          </p>
           <div className='flex gap-2 text-xs text-white-500'>
-            <span>{maxTemperature}°</span>
-            <span>{minTemperature}°</span>
+            <span>{Math.round(data?.max)}°</span>
+            <span>{Math.round(data?.min)}°</span>
           </div>
         </div>
       </div>

@@ -16,12 +16,13 @@ const openWeather = async (req: NextApiRequest, res: NextApiResponse) => {
     min: results.main.temp_min,
     max: results.main.temp_max,
     description: results.weather[0].description,
-    weather: results.weather[0].main,
-    timezone: results.timezone,
-    dt: results.dt
+    weather: results.weather[0].main
   }
 
-  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=')
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=60, stale-while-revalidate=30'
+  )
 
   return res.status(200).json(weatherData)
 }
