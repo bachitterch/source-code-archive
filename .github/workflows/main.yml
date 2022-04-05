@@ -24,9 +24,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        run: pnpm build
+      - run: pnpm build
         env:
-          NOTION_ACCESS_TOKEN: ${{ env.NOTION_ACCESS_TOKEN }}
+          NOTION_ACCESS_TOKEN: ${{ secrets.NOTION_ACCESS_TOKEN }}
           ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
           BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
           COLOPHON_PAGE_ID: ${{ secrets.COLOPHON_PAGE_ID }}
