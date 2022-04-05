@@ -46,3 +46,10 @@ jobs:
     - run: pnpm check
     - run: pnpm format
     - run: pnpm lint
+    - uses: amondnet/vercel-action@v20
+      with:
+          vercel-token: ${{ secrets.TURBO_TOKEN }} # Required
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+          working-directory: ./apps/portfolio-v3
