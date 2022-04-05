@@ -46,7 +46,6 @@ jobs:
       - run: pnpm check
       - run: pnpm format
       - run: pnpm lint
-      - run: pnpm lint:fix
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.TURBO_TOKEN }} # Required
