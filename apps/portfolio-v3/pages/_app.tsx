@@ -10,6 +10,11 @@ const MyApp = ({ Component, pageProps }) => {
         strategy='worker'
         src='https://www.googletagmanager.com/gtag/js?id=G-7WHCVMKCS8'
       />
+      <Script
+        src='https://analytics.bachitterch.com/umami.js'
+        data-website-id='f02c92de-db59-42c6-8459-a1b6fdfe1c17'
+        strategy='worker'
+      />
       <script
         type='text/partytown'
         dangerouslySetInnerHTML={{
