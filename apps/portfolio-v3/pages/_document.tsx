@@ -4,17 +4,6 @@ const Document = () => {
   return (
     <Html lang='en'>
       <Head>
-        <script
-          data-partytown-config
-          dangerouslySetInnerHTML={{
-            __html: `
-              partytown = {
-                lib: "/_next/static/~partytown/",
-                debug: true
-              };
-            `
-          }}
-        />
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
         <link

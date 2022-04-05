@@ -22,6 +22,7 @@ const NavBar = () => {
               <Home className='p-3 text-white-800' size={40} />
             </a>
           </Link>
+
           <Link href='/now'>
             <a
               aria-label='Now'
