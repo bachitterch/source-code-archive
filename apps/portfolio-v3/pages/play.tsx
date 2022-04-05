@@ -29,13 +29,13 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const title = 'Play - Bachitter Chahal'
-const url = 'https://bachitter.dev/play'
-
 const Play = ({ content }) => {
   return (
     <>
-      <NextSeo title={title} canonical={url} />
+      <NextSeo
+        title={`Play - Bachitter Chahal`}
+        canonical={`https://bachitter.dev/play`}
+      />
       <Layout>
         <h1>Play</h1>
         <p className='mb-6 text-tiny text-white-600 md:text-base'>
