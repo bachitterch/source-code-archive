@@ -8,7 +8,15 @@ const sitemap = async (req, res) => {
     return `/blog/${post.slug}`
   })
 
-  const localRoutes = ['/index', '/writing', '/about']
+  const localRoutes = [
+    '/index',
+    '/blog',
+    '/about',
+    '/colophon',
+    '/now',
+    '/play',
+    '/projects'
+  ]
 
   const pages = [...routes, ...localRoutes]
 
