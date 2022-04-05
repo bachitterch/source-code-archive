@@ -13,7 +13,6 @@ importers:
   apps/portfolio-v3:
     specifiers:
       '@builder.io/partytown': ^0.5.2
-      '@headlessui/react': ^1.5.0
       '@mailchimp/mailchimp_marketing': ^3.0.74
       '@notionhq/client': ^1.0.4
       '@tailwindcss/forms': ^0.5.0
@@ -41,7 +40,6 @@ importers:
       unsplash-js: ^7.0.15
     dependencies:
       '@builder.io/partytown': 0.5.2
-      '@headlessui/react': 1.5.0_react-dom@18.0.0+react@18.0.0
       '@mailchimp/mailchimp_marketing': 3.0.74
       '@notionhq/client': 1.0.4
       next: 12.1.4_react-dom@18.0.0+react@18.0.0
@@ -154,17 +152,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@headlessui/react/1.5.0_react-dom@18.0.0+react@18.0.0:
-    resolution: {integrity: sha512-aaRnYxBb3MU2FNJf3Ut9RMTUqqU3as0aI1lQhgo2n9Fa67wRu14iOGqx93xB+uMNVfNwZ5B3y/Ndm7qZGuFeMQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16 || ^17 || ^18
-      react-dom: ^16 || ^17 || ^18
-    dependencies:
-      react: 18.0.0
-      react-dom: 18.0.0_react@18.0.0
-    dev: false
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
