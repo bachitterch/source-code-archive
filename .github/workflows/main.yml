@@ -6,12 +6,11 @@ on:
   pull_request:
     branches: [main]
 
-
 build:
   runs-on: ubuntu-latest
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  env:
+    TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   strategy:
     matrix:
       node-version: [14.x]
