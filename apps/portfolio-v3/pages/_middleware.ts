@@ -4,7 +4,7 @@ import type { NextFetchEvent, NextRequest } from 'next/server'
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
   const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com *.mailchimp.com;
     child-src *.youtube.com *.google.com *.twitter.com;
     style-src 'self' 'unsafe-inline' *.typekit.net;
     img-src * blob: data: *.scdn.co *.unsplash.com *.cloudinary.com *.amazonaws.com;
