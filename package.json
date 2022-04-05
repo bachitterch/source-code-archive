@@ -16,11 +16,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "dev:portfolio": "turbo run dev --scope=portfolio-v3",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build",
+    "check": "prettier --check '**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "prettier": "^2.6.2",

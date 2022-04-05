@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -14,7 +13,7 @@ const nextConfig = {
       's3.us-west-2.amazonaws.com',
       's3-us-west-2.amazonaws.com',
       'res.cloudinary.com',
-      'github.com',
+      'github.com'
     ]
   },
   async rewrites() {
@@ -23,11 +22,11 @@ const nextConfig = {
         source: '/sitemap.xml',
         destination: '/api/sitemap'
       }
-    ];
+    ]
   },
   experimental: {
     images: {
-      layoutRaw: true,
+      layoutRaw: true
     }
   }
 }
