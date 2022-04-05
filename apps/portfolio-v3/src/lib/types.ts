@@ -7,6 +7,19 @@ export type NowPlayingSong = {
   songUrl: string
 }
 
+export type Song = {
+  title: string
+  artist: string
+  songUrl: string
+  albumArt: string
+  ranking: number
+}
+
+export type TopTracks = {
+  tracks: any
+  map: any
+}
+
 export type OpenWeatherData = {
   city: string
   temp: number

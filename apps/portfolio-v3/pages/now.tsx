@@ -1,4 +1,5 @@
 import { renderBlocks } from '@lib/renderBlocks'
+import TopTracks from '@components/TopTracks'
 import { getPageData } from '@lib/notion'
 import Layout from '@layouts/__layout'
 import { GetStaticProps } from 'next'
@@ -39,10 +40,17 @@ const Now = ({ content }) => {
           What I&#39;m working on, currently interested in or have plans to
           learn in near future. Mostly everything can be found here.
         </p>
-        <div className='space-y-6'>
+        <div className='space-y-6 mb-6'>
           {content.map(block => (
             <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
           ))}
+        </div>
+        <div>
+          <h2 className='mt-2'>Top Tracks</h2>
+          <p className='mb-6 text-tiny text-white-600 md:text-base'>
+            Songs I&#39;ve been listening the most recently.
+          </p>
+          <TopTracks />
         </div>
       </Layout>
     </>

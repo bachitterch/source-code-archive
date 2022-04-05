@@ -14,26 +14,21 @@ const nowPlaying = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).json({ isPlaying: false })
   }
 
-  const isPlaying = song.is_playing
-  const title = song.item.name
-  const artist = song.item.artists.map(artist => artist.name).join(', ')
-  const album = song.item.album.name
-  const albumArt = song.item.album.images[0].url
-  const songUrl = song.item.external_urls.spotify
+  const Song = {
+    isPlaying: song.is_playing,
+    title: song.item.name,
+    artist: song.item.artists.map(artist => artist.name).join(', '),
+    album: song.item.album.name,
+    albumArt: song.item.album.images[0].url,
+    songUrl: song.item.external_urls.spotify
+  }
 
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=60, stale-while-revalidate=30'
   )
 
-  return res.status(200).json({
-    isPlaying,
-    title,
-    artist,
-    album,
-    albumArt,
-    songUrl
-  })
+  return res.status(200).json(Song)
 }
 
 export default nowPlaying
