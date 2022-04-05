@@ -1,6 +1,6 @@
 ## What's inside?
 
-[Turborepo](https://turborepo.org/) project containing personal portfolio and future projects. [![Vercel](https://img.shields.io/badge/-powered%20by%20vercel-black.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/home?utm_source=nuro&utm_campaign=oss)
+[Turborepo](https://turborepo.org/) project containing personal portfolio and future projects.
 
 ### Packages
 
@@ -44,3 +44,5 @@ To develop all apps and packages, run the following command:
 cd source-code
 pnpm run dev
 ```
+
+[![Vercel](https://img.shields.io/badge/-powered%20by%20vercel-black.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/home?utm_source=nuro&utm_campaign=oss)
