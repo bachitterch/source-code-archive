@@ -16,7 +16,7 @@ export const seo = {
     locale: 'en_US',
     images: [
       {
-        url: `https://${domain}/${image}`,
+        url: `https://${domain}/images/${image}`,
         width: 1600,
         height: 836,
         alt: title
