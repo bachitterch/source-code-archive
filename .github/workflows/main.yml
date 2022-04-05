@@ -6,7 +6,8 @@ on:
   pull_request:
     branches: [main]
 
-build:
+jobs:
+  build:
   runs-on: ubuntu-latest
   env:
     TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
