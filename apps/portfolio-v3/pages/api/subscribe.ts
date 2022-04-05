@@ -6,30 +6,26 @@ const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })
   }
-  try {
-    const API_KEY = process.env.BUTTONDOWN_API_KEY
-    const response = await fetch(
-      `https://api.buttondown.email/v1/subscribers`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Token ${API_KEY}`
-        },
-        body: JSON.stringify({ email })
-      }
-    )
 
-    if (response.status >= 400) {
-      return res.status(400).json({
-        error: `There was an error subscribing to the newsletter.`
-      })
-    }
+  const response = await fetch('https://www.getrevue.co/api/v2/subscribers', {
+    method: 'POST',
+    headers: {
+      Authorization: `Token ${process.env.REVUE_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email,
+      double_opt_in: false
+    })
+  })
 
-    return res.status(201).json({ error: '' })
-  } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() })
+  const data = await response.json()
+
+  if (!response.ok) {
+    return res.status(500).json({ error: data.error.email[0] })
   }
+
+  return res.status(201).json({ error: '' })
 }
 
 export default Subscribe

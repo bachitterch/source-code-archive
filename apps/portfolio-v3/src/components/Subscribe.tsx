@@ -32,7 +32,7 @@ export const Subscribe = () => {
 
     setForm({
       state: Form.Success,
-      message: `Success! 🎉 You've been added to the list! !Check email for confirmation.`
+      message: `Success! 🎉 You've been added to the list! 🎉`
     })
   }
 
