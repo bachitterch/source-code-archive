@@ -31,11 +31,11 @@ const Blog = ({ posts }) => {
       />
       <Container>
         <h1>Blog</h1>
-        <p className='mb-10 text-tiny opacity-60 md:text-base'>
+        <p className='mb-6 text-tiny text-white-600 md:text-base'>
           Here I share my knowledge about development, CSS, Javascript and
           experience in my life.
         </p>
-        <div className='post_list space-y-5'>
+        <div className='post_list space-y-6'>
           {(!posts.length && (
             <p className='text-center text-white-600 text-base'>
               No Article Found!
