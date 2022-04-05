@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - run: pnpm build
-        env:
+        with:
           NOTION_ACCESS_TOKEN: ${{ env.NOTION_ACCESS_TOKEN }}
           ABOUT_PAGE_ID: ${{ secrets.ABOUT_PAGE_ID }}
           BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
