@@ -25,6 +25,6 @@
   "github": {
     "silent": true,
     "autoJobCancelation": false,
-    "enabled": true
+    "enabled": false
   }
 }
