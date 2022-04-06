@@ -7,7 +7,7 @@ import Analytics from '@lib/analytics'
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Analytics />
+      <Analytics websiteId='f02c92de-db59-42c6-8459-a1b6fdfe1c17' />
       <DefaultSeo {...seo} />
       <Component {...pageProps} />
     </>

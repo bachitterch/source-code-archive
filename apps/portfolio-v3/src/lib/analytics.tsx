@@ -1,11 +1,15 @@
 import Script from 'next/script'
 
-const Analytics = () => {
+type AnalyticsProps = {
+  websiteId: string
+}
+
+const Analytics = ({ websiteId }: AnalyticsProps) => {
   return (
     <>
       <Script
         src='https://analytics.bachitterch.com/umami.js'
-        data-website-id='f02c92de-db59-42c6-8459-a1b6fdfe1c17'
+        data-website-id={websiteId}
         strategy='lazyOnload'
       />
     </>
