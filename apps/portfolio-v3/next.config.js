@@ -25,7 +25,7 @@ const nextConfig = {
     ]
   },
   experimental: {
-    nextScriptWorkers: true,
+
     images: {
       layoutRaw: true
     }
