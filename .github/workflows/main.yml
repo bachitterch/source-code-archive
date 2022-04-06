@@ -2,7 +2,10 @@ name: root
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths:
+      - app/portfolio-v3
   pull_request:
     branches: [main]
 

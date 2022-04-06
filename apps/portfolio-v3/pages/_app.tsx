@@ -1,9 +1,10 @@
-import '../styles/globals.css'
-import { seo } from '@data/seo'
-import Script from 'next/script'
+import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
+import Script from 'next/script'
+import { seo } from '@data/seo'
+import '../styles/globals.css'
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Script
