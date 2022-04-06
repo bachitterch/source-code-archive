@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - app/portfolio-v3
+      - app/portfolio-v3/*
   pull_request:
     branches: [main]
 
