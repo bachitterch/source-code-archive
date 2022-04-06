@@ -98,12 +98,13 @@ const Home = ({ projects, posts }) => {
                       <Image
                         src={project.thumbnail}
                         alt={project.title}
-                        layout='raw'
+                        objectFit='cover'
+                        objectPosition='top'
                         width={1200}
                         height={684}
                         placeholder='blur'
                         blurDataURL={project.thumbnail}
-                        className='projectImage rounded-md md:rounded-xl object-cover object-top'
+                        className='projectImage rounded-xl'
                       ></Image>
                       <h3 className='mb-2 mt-4'>{project.title}</h3>
                       <p className='mb-4 text-base'>{project.summary}</p>
@@ -145,12 +146,12 @@ const Home = ({ projects, posts }) => {
                           <Image
                             src={post.thumbnail}
                             alt={post.title}
-                            layout='raw'
+                            objectFit='cover'
                             width={1200}
                             height={684}
                             placeholder='blur'
                             blurDataURL={post.thumbnail}
-                            className='projectImage rounded-md md:rounded-xl object-cover object-top'
+                            className='projectImage rounded-xl'
                           ></Image>
                           <h3 className='mb-2 mt-4 text-white-800'>
                             {post.title}

@@ -115,7 +115,7 @@ export const renderBlocks = block => {
             src={src}
             alt={caption}
             loading='lazy'
-            className='postImage rounded-md md:rounded-xl'
+            className='postImage rounded-xl max-h-[684px] max-w-[1200px] w-full h-full'
           />
           {caption && (
             <figcaption className='text-tiny italic ml-px opacity-60'>

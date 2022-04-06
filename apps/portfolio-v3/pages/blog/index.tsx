@@ -54,7 +54,7 @@ const Blog = ({ posts }) => {
                         height={684}
                         placeholder='blur'
                         blurDataURL={post.thumbnail}
-                        className='postImage rounded-md md:rounded-xl'
+                        className='postImage rounded-xl'
                       ></Image>
                       <h2 className='mb-2 mt-4 text-white-800'>{post.title}</h2>
                       <p className='text-base'>{post.summary}</p>

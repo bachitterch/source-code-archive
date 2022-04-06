@@ -47,7 +47,7 @@ const Projects = ({ projects }) => {
                     height={684}
                     placeholder='blur'
                     blurDataURL={project.thumbnail}
-                    className='projectImage rounded-md md:rounded-xl'
+                    className='projectImage rounded-xl'
                   ></Image>
                   <h2 className='mb-2 mt-4 text-white-800'>{project.title}</h2>
                   <p className='text-base mb-4'>{project.summary}</p>
