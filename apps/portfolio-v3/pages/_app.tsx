@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <script
         async
         defer
-        data-domain='bachitter.dev'
+        data-domains='bachitter.dev'
         data-website-id='e845f1a6-544d-4ba6-b486-7974794891e8'
         src='https://umami-9da384.netlify.app/umami.js'
       ></script>
