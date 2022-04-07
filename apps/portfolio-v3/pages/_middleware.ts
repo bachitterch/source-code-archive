@@ -8,7 +8,7 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
     child-src *.youtube.com *.google.com *.twitter.com;
     worker-src 'self' *.google.com;
     style-src 'self' 'unsafe-inline' *.typekit.net;
-    script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.bachitterch.com;
+    script-src-elem 'self' 'unsafe-inline' *.bachitterch.com;
     img-src * blob: data: *.scdn.co *.unsplash.com *.cloudinary.com *.amazonaws.com;
     frame-src 'self'  *.google.com;
     media-src 'none';
