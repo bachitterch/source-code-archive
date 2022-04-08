@@ -64,9 +64,7 @@ export const Subscribe = () => {
       ) : form.state === Form.Success ? (
         <p>{form.message}</p>
       ) : (
-        <p className='text-sm text-gray-800 dark:text-gray-200'>
-          No spam - unsubscribe at any time!
-        </p>
+        <p className='text-sm'>No spam - unsubscribe at any time!</p>
       )}
     </div>
   )
