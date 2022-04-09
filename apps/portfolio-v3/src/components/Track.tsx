@@ -1,4 +1,5 @@
 import { Song } from '@lib/types'
+import { raw } from 'next/dist/build/webpack/loaders/next-middleware-wasm-loader'
 import Image from 'next/image'
 
 const Track = (track: Song) => {
@@ -8,16 +9,15 @@ const Track = (track: Song) => {
         {track.ranking}
       </p>
       <div className='pl-3 flex mb-4 items-center'>
-        <div className='w-full max-w-14 max-h-14 h-full'>
-          <Image
-            src={track?.albumArt}
-            width={50}
-            height={50}
-            objectFit='cover'
-            className='rounded-md'
-            alt='NowPlaying Cove Image'
-          ></Image>
-        </div>
+        <Image
+          src={track?.albumArt}
+          layout='raw'
+          width={50}
+          height={50}
+          className='rounded-md'
+          alt='NowPlaying Cove Image'
+        />
+
         <div className='flex flex-col pl-3'>
           <a
             href={track?.songUrl}
