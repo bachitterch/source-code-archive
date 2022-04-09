@@ -105,7 +105,7 @@ export const renderBlocks = block => {
       )
     case 'child_page':
       return <p>{value.title}</p>
-    case 'image':
+    case 'image': {
       const src =
         value.type === 'external' ? value.external.url : value.file.url
       const caption = value.caption ? value.caption[0]?.plain_text : ''
@@ -124,6 +124,7 @@ export const renderBlocks = block => {
           )}
         </div>
       )
+    }
     case 'divider':
       return <hr key={id} />
     case 'quote':

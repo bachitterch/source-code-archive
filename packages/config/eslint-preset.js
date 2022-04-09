@@ -1,6 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['next/core-web-vitals', 'prettier', 'eslint:recommended'],
+  plugins: ['prettier'],
   settings: {
     next: {
       rootDir: ['apps/*/', 'packages/*/']
@@ -19,15 +20,11 @@ module.exports = {
     }
   },
   rules: {
+    'prettier/prettier': 1,
     'no-unused-vars': 0,
     'no-undef': 0,
-    'no-console': 'warn',
+    'no-console': 1,
     'react/prop-types': 0,
-    'no-case-declarations': 0,
-    'import/no-anonymous-default-export': [
-      'error',
-      { allowArrowFunction: true }
-    ],
     '@next/next/no-img-element': 0
   }
 }
