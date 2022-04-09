@@ -21,15 +21,27 @@
     "build": "turbo run build",
     "check": "prettier --check '**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "test": "pnpm check && pnpm build",
+    "prepare": "husky install",
     "lint": "turbo run lint"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
     "turbo": "^1.2.1"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
   "packageManager": "pnpm@6.32.4"
 }

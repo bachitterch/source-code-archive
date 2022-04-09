@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm test && pnpm dlx lint-staged
+
+echo '✅ ✅Your checked-in code looks good. Commiting... ✅ ✅'
