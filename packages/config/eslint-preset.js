@@ -21,10 +21,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 1,
-    'no-unused-vars': 0,
-    'no-undef': 0,
     'no-console': 1,
     'react/prop-types': 0,
-    '@next/next/no-img-element': 0
   }
 }
