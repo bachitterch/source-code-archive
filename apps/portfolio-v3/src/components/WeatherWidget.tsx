@@ -46,14 +46,13 @@ const ImageLink = (weather: string) => {
 
 const WeatherWidget = () => {
   const { data } = useSWR<OpenWeatherData>('/api/open-weather', fetcher)
-  const weather = data?.weather
 
   return (
     <div
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0,0,0,.9) 25%, rgba(255,255,255,0) 100%), url('${renderImage(
-          weather
-        )}  ')`,
+          data?.weather
+        )}')`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
@@ -62,7 +61,7 @@ const WeatherWidget = () => {
       id='weather-widget'
     >
       <a
-        href={ImageLink(weather)}
+        href={ImageLink(data?.weather)}
         className='absolute right-6 bottom-6'
         target='_blank'
         rel='noopener noreferrer'
@@ -71,10 +70,7 @@ const WeatherWidget = () => {
       </a>
       <div className='space-y-4'>
         <p className='text-[3rem] font-bold'>{Math.round(data?.temp)}°</p>
-        <p className='text-sm leading-none'>
-          {data?.description.charAt(0).toUpperCase() +
-            data?.description.slice(1)}
-        </p>
+        <p className='text-sm leading-none'>{data?.description}</p>
         <div>
           <p className='text-sm font-semibold leading-none mb-0.5'>
             {data?.city}

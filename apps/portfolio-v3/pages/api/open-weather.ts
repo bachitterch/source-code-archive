@@ -15,7 +15,9 @@ const openWeather = async (req: NextApiRequest, res: NextApiResponse) => {
     temp: results.main.temp,
     min: results.main.temp_min,
     max: results.main.temp_max,
-    description: results.weather[0].description,
+    description:
+      results.weather[0].description.charAt(0).toUpperCase() +
+      results.weather[0].description.slice(1),
     weather: results.weather[0].main
   }
 
