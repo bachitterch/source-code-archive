@@ -1,6 +1,4 @@
-import { motion, AnimateSharedLayout } from 'framer-motion'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import {
@@ -21,11 +19,11 @@ function NavItem({ href, name, children }) {
       <a
         className={cn(
           isActive ? 'bg-white-0' : 'bg-white-200',
-          'relative group block hover:bg-white-10 rounded-xl transition-all duration-300'
+          'relative group block hover:bg-white-10 rounded-xl transition-all duration-200'
         )}
       >
         <span>{children}</span>
-        <span className='absolute -inset-x-6 mx-auto bg-white-800 -top-12 py-1 px-2 text-center scale-0 sm:group-hover:scale-100 text-sm rounded-md transition-all duration-300 max-w-max text-white-50'>
+        <span className='absolute -inset-x-6 mx-auto bg-white-800 -top-12 py-1 px-2 text-center scale-0 sm:group-hover:scale-100 text-sm rounded-md transition-all duration-200 max-w-max text-white-50'>
           {name}
         </span>
       </a>
