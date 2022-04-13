@@ -10,9 +10,8 @@
 ### Sites
 
 - [bachitter.dev](https://bachitter.dev)
+  - [x] Add Better Navigation
   - [ ] Add Comments
-  - [ ] Add Better Navigation
-  - [ ] Refactoring
 
 Check Status at [https://status.bachitterch.com](https://status.bachitterch.com)
 

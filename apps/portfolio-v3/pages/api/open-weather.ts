@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const apiKey = process.env.OPEN_WEATHER_API_KEY
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather`
-const city = 'Surrey,CA'
+const apiKey: string = process.env.OPEN_WEATHER_API_KEY
+const apiUrl: string = `https://api.openweathermap.org/data/2.5/weather`
+const city: string = 'Surrey,CA'
 
 const openWeather = async (req: NextApiRequest, res: NextApiResponse) => {
-  const ENDPOINT = `${apiUrl}?q=${city}&appid=${apiKey}&units=imperial`
+  const ENDPOINT: string = `${apiUrl}?q=${city}&appid=${apiKey}&units=imperial`
 
-  const response = await fetch(ENDPOINT)
+  const response: Response = await fetch(ENDPOINT)
   const results = await response.json()
 
   const weatherData = {
