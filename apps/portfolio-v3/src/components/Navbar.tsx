@@ -33,7 +33,7 @@ function NavItem({ href, name, children }) {
 
 const Nav = () => {
   return (
-    <footer className='fixed inset-x-0 bottom-16 z-[9999999999] w-full text-center transition-all'>
+    <footer className='fixed inset-x-0 bottom-6  md:bottom-9 z-[9999999999] w-full text-center transition-all duration-500'>
       <nav className='mx-auto max-w-fit'>
         <div className='flex mx-8 items-center space-x-2 rounded-[1.5rem] border-2 border-white-300 p-3 transition-all backdrop-blur bg-white-50/80 fixed_nav  overflow-x-auto sm:overflow-x-visible'>
           <NavItem href='/' name='Home'>
