@@ -54,7 +54,7 @@ export const Subscribe = () => {
         />
         <button
           type='submit'
-          className='flex items-center justify-center rounded-md px-3 bg-white-500/60 h-10 hover:bg-white-500/30 transition-all duration-300 ease-in-out'
+          className='flex items-center justify-center rounded-md px-3 bg-white-200/30 h-10 hover:bg-white-200/70 transition-all duration-300 ease-in-out'
         >
           {form.state === Form.Loading ? <span>loading...</span> : 'Subscribe'}
         </button>
