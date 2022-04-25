@@ -53,7 +53,7 @@ const NowPlaying = () => {
             </a>
           ) : (
             <a
-              className='text-xl font-bold text-white-900 truncate'
+              className='text-2xl font-bold text-white-900 truncate'
               href={lastPlayed?.songUrl}
               target='_blank'
               rel='noopener noreferrer'
@@ -61,7 +61,7 @@ const NowPlaying = () => {
               {lastPlayed?.title}
             </a>
           )}
-          <p className='-mt-2 w-[22ch] text-white-900 truncate'>
+          <p className='-mt-2 text-base w-[22ch] text-white-900 truncate'>
             {data?.artist ?? lastPlayed?.artist}
           </p>
         </div>
