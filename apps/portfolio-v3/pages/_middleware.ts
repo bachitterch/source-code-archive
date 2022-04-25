@@ -6,6 +6,7 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline'  *.youtube.com *.twitter.com;
     child-src *.youtube.com *.twitter.com;
+    frame-src *.youtube.com *.twitter.com twitter.com *.amazonaws.com;
     style-src 'self' 'unsafe-inline' *.typekit.net;
     script-src-elem 'self' 'unsafe-inline' *.bachitterch.com;
     img-src * blob: data: *.scdn.co *.unsplash.com *.cloudinary.com *.amazonaws.com;

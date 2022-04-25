@@ -7,6 +7,13 @@ export type NowPlayingSong = {
   songUrl: string
 }
 
+export type LastPlayedSong = {
+  title: string
+  artist: string
+  albumArt: string
+  songUrl: string
+}
+
 export type Song = {
   title: string
   artist: string

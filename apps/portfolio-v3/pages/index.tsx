@@ -50,8 +50,8 @@ const Home = ({ projects, posts }) => {
             <Image
               src={authorimage}
               alt='Photo of Bachitter'
-              width={86}
-              height={86}
+              width={90}
+              height={90}
               className='authorImage'
             ></Image>
             <div className='authorInfo'>

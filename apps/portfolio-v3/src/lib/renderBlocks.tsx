@@ -1,5 +1,3 @@
-import { Fragment } from 'react'
-
 export const Text = ({ text }) => {
   if (!text) {
     return null
@@ -92,17 +90,6 @@ export const renderBlocks = block => {
           </label>
         </div>
       )
-    case 'toggle':
-      return (
-        <details>
-          <summary>
-            <Text text={value.rich_text} />
-          </summary>
-          {value.children?.map(block => (
-            <Fragment key={block.id}>{renderBlocks(block)}</Fragment>
-          ))}
-        </details>
-      )
     case 'child_page':
       return <p>{value.title}</p>
     case 'image': {
@@ -166,6 +153,32 @@ export const renderBlocks = block => {
             allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
             title='YouTube Video'
+          />
+        </div>
+      )
+    case 'embed':
+      return (
+        <div className='relative mx-auto h-full w-full overflow-hidden pb-[56.25%]'>
+          <iframe
+            className='absolute top-0 left-0 mx-auto h-full w-full rounded-md md:rounded-xl'
+            src={value.url}
+            frameBorder='0'
+            allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+            title='embed'
+          />
+        </div>
+      )
+    case 'pdf':
+      return (
+        <div className='relative mx-auto h-full w-full overflow-hidden pb-[56.25%]'>
+          <iframe
+            className='absolute top-0 left-0 mx-auto h-full w-full rounded-md md:rounded-xl'
+            src={value.file.url}
+            frameBorder='0'
+            allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+            title='embed'
           />
         </div>
       )
