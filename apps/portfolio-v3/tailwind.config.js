@@ -37,7 +37,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'san-serif'],
-        mono: ['source-code-pro', 'monospace']
+        mono: ['Source Code Pro', 'monospace']
       }
     }
   },

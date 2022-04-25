@@ -27,7 +27,6 @@ const Document = () => {
           type='font/woff2'
           crossOrigin='anonymous'
         />
-        <link rel='stylesheet' href='https://use.typekit.net/ohm3ssj.css' />
         <meta
           name='p:domain_verify'
           content='c7d4bbeb097f6c60016e4d0e1828fc38'

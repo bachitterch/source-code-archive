@@ -16,6 +16,7 @@ importers:
 
   apps/portfolio-v3:
     specifiers:
+      '@fontsource/source-code-pro': ^4.5.6
       '@notionhq/client': ^1.0.4
       '@tailwindcss/forms': ^0.5.0
       '@tailwindcss/typography': ^0.5.2
@@ -41,6 +42,7 @@ importers:
       typescript: ^4.6.3
       unsplash-js: ^7.0.15
     dependencies:
+      '@fontsource/source-code-pro': 4.5.6
       '@notionhq/client': 1.0.4
       classnames: 2.3.1
       next: 12.1.5_react-dom@18.0.0+react@18.0.0
@@ -115,6 +117,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@fontsource/source-code-pro/4.5.6:
+    resolution: {integrity: sha512-idYGw+8gEyec58O5LFkJecscaQDJmTMrrRBcmrYTbS2fhSyEuaq1xtTpG8QOQCvW5CA0XrSpWVfA/1HwJjm6Fw==}
+    dev: false
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}

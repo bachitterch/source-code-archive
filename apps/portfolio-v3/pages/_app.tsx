@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 import { seo } from '@data/seo'
+import '@fontsource/source-code-pro'
 import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
