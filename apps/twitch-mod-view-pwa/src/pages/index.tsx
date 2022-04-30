@@ -1,8 +1,16 @@
 import type { NextPage } from 'next'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useEffect } from 'react'
 
 const Home: NextPage = () => {
   const { data: session } = useSession()
+
+  useEffect(() => {
+    if (session?.error === 'RefreshAccessTokenError') {
+      signIn()
+    }
+  }, [session])
+
   return (
     <div>
       <h1>Hello Next.js</h1>
