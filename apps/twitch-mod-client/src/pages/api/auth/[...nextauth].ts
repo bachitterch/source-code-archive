@@ -4,7 +4,7 @@ import Twitch from 'next-auth/providers/twitch'
 async function refreshAccessToken(token) {
   try {
     const url =
-      'https://id.twitch.tv/oauth2/authorize' +
+      'https://id.twitch.tv/oauth2/token?' +
       new URLSearchParams({
         client_id: process.env.TWITCH_CLIENT_ID,
         client_secret: process.env.TWITCH_CLIENT_SECRET,
@@ -44,13 +44,21 @@ export default NextAuth({
   providers: [
     Twitch({
       clientId: process.env.TWITCH_CLIENT_ID,
-      clientSecret: process.env.TWITCH_CLIENT_SECRET
+      clientSecret: process.env.TWITCH_CLIENT_SECRET,
+      authorization: {
+        params: {
+          scope:
+            'openid user:read:email chat:read chat:edit channel:moderate whispers:read whispers:edit user:read:follows moderator:manage:automod moderator:manage:banned_users user:read:subscriptions channel:read:hype_train channel:read:polls'
+        }
+      }
     })
   ],
   callbacks: {
     async jwt({ token, user, account }) {
       if (account && user) {
         return {
+          ...token,
+
           accessToken: account.access_token,
           accessTokenExpires: account.expires_at,
           refreshToken: account.refresh_token,

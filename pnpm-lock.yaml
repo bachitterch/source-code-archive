@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 importers:
 
@@ -45,8 +45,8 @@ importers:
       '@fontsource/source-code-pro': 4.5.6
       '@notionhq/client': 1.0.4
       classnames: 2.3.1
-      next: 12.1.5_react-dom@18.0.0+react@18.0.0
-      next-seo: 5.4.0_1cf2cc49e2c27648b440cc4e09213966
+      next: 12.1.5_zpnidt7m3osuk7shl3s4oenomq
+      next-seo: 5.4.0_dtzmyspcyj3erncazrhasijzmy
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-feather: 2.0.9_react@18.0.0
@@ -82,11 +82,12 @@ importers:
       prettier-plugin-tailwindcss: ^0.1.10
       react: ^18.0.0
       react-dom: ^18.0.0
+      swr: ^1.3.0
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
-      next: 12.1.5_react-dom@18.0.0+react@18.0.0
-      next-auth: 4.3.4_react-dom@18.0.0+react@18.0.0
+      next: 12.1.5_zpnidt7m3osuk7shl3s4oenomq
+      next-auth: 4.3.4_zpnidt7m3osuk7shl3s4oenomq
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
     devDependencies:
@@ -97,6 +98,7 @@ importers:
       eslint: 8.14.0
       prettier: 2.6.2
       prettier-plugin-tailwindcss: 0.1.10_prettier@2.6.2
+      swr: 1.3.0_react@18.0.0
       tsconfig: link:../../packages/tsconfig
       typescript: 4.6.3
 
@@ -110,7 +112,7 @@ importers:
       '@typescript-eslint/parser': 5.19.0
       eslint-config-next: 12.1.5
       eslint-config-prettier: 8.5.0
-      eslint-plugin-prettier: 4.0.0_ad206096bdee02cd87fd9bdfe684ae30
+      eslint-plugin-prettier: 4.0.0_ttcikbw5yztdadzhevg6ml5cuy
 
   packages/tsconfig:
     specifiers: {}
@@ -1027,7 +1029,7 @@ packages:
       '@rushstack/eslint-patch': 1.0.8
       '@typescript-eslint/parser': 5.10.1
       eslint-import-resolver-node: 0.3.4
-      eslint-import-resolver-typescript: 2.4.0_eslint-plugin-import@2.25.2
+      eslint-import-resolver-typescript: 2.4.0_vh5gizyt4jfjl2cpwztvw7criy
       eslint-plugin-import: 2.25.2
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.29.1
@@ -1057,7 +1059,7 @@ packages:
       resolve: 1.22.0
     dev: false
 
-  /eslint-import-resolver-typescript/2.4.0_eslint-plugin-import@2.25.2:
+  /eslint-import-resolver-typescript/2.4.0_vh5gizyt4jfjl2cpwztvw7criy:
     resolution: {integrity: sha512-useJKURidCcldRLCNKWemr1fFQL1SzB3G4a0li6lFGvlc5xGe1hY343bvG07cbpCzPuM/lK19FIJB3XGFSkplA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1123,7 +1125,7 @@ packages:
       minimatch: 3.1.2
     dev: false
 
-  /eslint-plugin-prettier/4.0.0_ad206096bdee02cd87fd9bdfe684ae30:
+  /eslint-plugin-prettier/4.0.0_ttcikbw5yztdadzhevg6ml5cuy:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -1135,7 +1137,6 @@ packages:
         optional: true
     dependencies:
       eslint-config-prettier: 8.5.0
-      prettier: 2.6.2
       prettier-linter-helpers: 1.0.0
     dev: false
 
@@ -1877,7 +1878,7 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /next-auth/4.3.4_react-dom@18.0.0+react@18.0.0:
+  /next-auth/4.3.4_zpnidt7m3osuk7shl3s4oenomq:
     resolution: {integrity: sha512-8dGkNicbxY2BYsJq4uOJIEsGt39wXj5AViTBsVfbRQqtAFmZmXYHutf90VBmobm8rT2+Xl60HDUTkuVVK+x+xw==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
@@ -1901,19 +1902,19 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-seo/5.4.0_1cf2cc49e2c27648b440cc4e09213966:
+  /next-seo/5.4.0_dtzmyspcyj3erncazrhasijzmy:
     resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_react-dom@18.0.0+react@18.0.0
+      next: 12.1.5_zpnidt7m3osuk7shl3s4oenomq
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
     dev: false
 
-  /next/12.1.5_react-dom@18.0.0+react@18.0.0:
+  /next/12.1.5_zpnidt7m3osuk7shl3s4oenomq:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -2617,7 +2618,6 @@ packages:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.0.0
-    dev: false
 
   /tailwindcss/3.0.24:
     resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}
