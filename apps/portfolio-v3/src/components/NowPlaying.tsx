@@ -41,7 +41,7 @@ const NowPlaying = () => {
             <span>Offline - Last Played</span>
           )}
         </p>
-        <div className='truncate'>
+        <div>
           {data?.songUrl ? (
             <a
               className='text-xl font-bold text-white-900 truncate'
@@ -53,7 +53,7 @@ const NowPlaying = () => {
             </a>
           ) : (
             <a
-              className='text-3xl font-bold text-white-900 hover:no-underline'
+              className='text-3xl font-bold text-white-900 truncate hover:no-underline'
               href={lastPlayed?.songUrl}
               target='_blank'
               rel='noopener noreferrer'
