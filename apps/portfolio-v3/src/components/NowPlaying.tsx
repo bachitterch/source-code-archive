@@ -11,7 +11,7 @@ const NowPlaying = () => {
   )
 
   return (
-    <div className='flex bg-white-10 p-6 rounded-xl flex-col w-full h-56 justify-end'>
+    <div className='flex bg-white-10 p-6 rounded-xl flex-col w-full h-56 justify-end truncate'>
       <div className='flex flex-col justify-end relative'>
         <div>
           {data?.songUrl ? (
@@ -41,7 +41,7 @@ const NowPlaying = () => {
             <span>Offline - Last Played</span>
           )}
         </p>
-        <div>
+        <div className='w-full truncate'>
           {data?.songUrl ? (
             <a
               className='text-xl font-bold text-white-900 truncate'
@@ -53,7 +53,7 @@ const NowPlaying = () => {
             </a>
           ) : (
             <a
-              className='text-3xl font-bold text-white-900 truncate hover:no-underline'
+              className='text-3xl font-bold text-white-900 truncate hover:no-underline block'
               href={lastPlayed?.songUrl}
               target='_blank'
               rel='noopener noreferrer'
