@@ -18,8 +18,8 @@ function NavItem({ href, name, children }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive ? 'bg-white-0' : 'bg-white-200',
-          'relative group block hover:bg-white-10 rounded-xl transition-all duration-200'
+          isActive ? 'bg-white-0/75' : 'bg-white-10',
+          'relative group block hover:bg-white-10/50 rounded-xl transition-all duration-200'
         )}
       >
         <span>{children}</span>
@@ -35,7 +35,7 @@ const Nav = () => {
   return (
     <footer className='fixed inset-x-0 bottom-6  md:bottom-9 z-[9999999999] w-full text-center transition-all duration-500'>
       <nav className='mx-auto max-w-fit'>
-        <div className='flex mx-8 items-center space-x-2 rounded-[1.5rem] border-2 border-white-300 p-3 transition-all backdrop-blur bg-white-50/80 fixed_nav  overflow-x-auto sm:overflow-x-visible'>
+        <div className='flex mx-8 items-center space-x-2 rounded-[1.5rem] border-2 border-white-200 p-3 transition-all backdrop-blur bg-white-50/[.85] fixed_nav  overflow-x-auto sm:overflow-x-visible'>
           <NavItem href='/' name='Home'>
             <Home className='p-3 text-white-800' size={40} />
           </NavItem>
